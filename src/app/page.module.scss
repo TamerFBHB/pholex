@@ -1,0 +1,72 @@
+@use '../SASS/Main' as* ;
+
+
+.main{
+  @include flex(center,center);
+  color: var(--text);
+  overflow: hidden;
+}
+.avatarContainer{
+  @include size(50% , calc(100vh - 80px));
+  @include flex(center,center);
+
+  .avatar{
+    @include size(500px , 550px);  
+    position: relative;
+    opacity: 0;
+    @include animation(FadeIn);
+  }
+}
+.avatarContainer .card{
+  position: absolute;
+  right:-15px;
+  bottom: -15px;
+  z-index: 20;box-shadow: 3px 3px 10px $gray-5; 
+  border-radius: 15px;
+  opacity: 0;
+  @include animation-time(FromRight,0.5s, 0.3s );
+  transition: 1s
+}
+.avatarContainer .lines{
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  z-index: 10;
+  @include animation(FadeIn);
+}
+.info{
+  @include size(50% ,calc(100vh - 80px));
+  @include flex-col(center,start);
+  gap: 20px;
+  padding: 0 55px 0 0 ;
+  text-transform: capitalize;
+  color: var(--text);  
+  opacity: 0;
+  @include animation(FromBottom);
+
+  h6{
+    font-size: 20px;
+    color: var(--social-clr);
+  }
+  h1{
+    font-size: 70px;
+    line-height: 60px;
+    color: var(--text);
+  }
+  p{
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .btn{
+    @include size(150px , 50px);
+    @include flex(center,center);
+    border-radius: 30px;
+    color: var(--text);
+    background: linear-gradient(to right, $indigo-8 , color-mix(in lab,$indigo-8 , #fff ));
+    box-shadow: 3px 3px 10px $gray-5;    
+    opacity: 0;
+    @include animation-time(FromBottom,1s, 0.3s );
+    
+  }
+}
