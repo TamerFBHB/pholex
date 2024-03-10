@@ -4,7 +4,7 @@
 .navbar {
     @include size(100% , 80px);
     @include flex (space-between , center);
-    border-top: 10px solid var(--social-clr) ;
+    border-top: 10px solid var(--primary-clr) ;
     top: 0;
     background-color: var(--bg-nav);
     color: var(--text);
@@ -52,13 +52,13 @@
 }
 .activeLink{
     font-weight: bold;
-    color: var(--social-clr);
+    color: var(--primary-clr);
 }
 .activeLink::after{
     content: "";
     position: absolute;
     @include size(100%, 2px);
-    background-color: var(--social-clr);
+    background-color: var(--primary-clr);
     left: 0%;
     border-radius: 50%;
     bottom: 0;
@@ -73,7 +73,8 @@
 }
 .socialMedia{
     @include flex (center , center);
-    color: var(--social-clr);
+    color: var(--primary-clr);
     gap: 10px;
     cursor: pointer;
+    margin-right: 10px;
 }
