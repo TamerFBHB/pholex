@@ -82,9 +82,9 @@
 
 // 11- blur background
 @mixin blur-bg($color) {
-  background-color: rgba($color , 40%);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  background-color: rgba($color , 60%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 // 12- change gradient background with hover must write 4 color ($clr1 , $clr2 , $clr3 ,$clr4)
@@ -123,7 +123,7 @@
   }
 }
 
-//15- change backgroun when hover in The opposite trend
+//15- change background when hover in The opposite trend
 @mixin bg-clr-opposite($clr-Background, $clr-text , $bord-radius) {
   position: relative;
   &::before {

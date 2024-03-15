@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={styles.mains}>
       <main className={styles.main}>
         <div className={styles.info}>
           <h6>why choose us</h6>
@@ -17,12 +17,22 @@ export default function Home() {
         <div className={styles.avatarContainer} >
           <div className={styles.avatar}>
             <Image src="/Hero Image.png" alt="avatar" fill />
-            <Image src="/Group-9279.png" alt="card" width={75} height={100}  className={styles.lines}/>
-            <Image src="/Group-7661.png" alt="card" width={220} height={250} className={styles.card}/>
+            <Image src="/Group-9279.png" alt="" width={75} height={100} className={styles.lines} />
+            <div className={styles.imageCardContainer}>
+              <div className={styles.imgCards}>
+                <Image src="/Group-7661.png" alt="" fill className={styles.imgCard} />
+              </div>
+            </div>
           </div>
-          
         </div>
       </main >
-    </div >
+
+      <div className={styles.cards}>
+        <div className={`${styles.card} ${styles.why}`}></div>
+        <div className={`${styles.card} ${styles.seo}`}></div>
+        <div className={`${styles.card} ${styles.deigning}`}></div>
+        <div className={`${styles.card} ${styles.developement}`}></div>
+      </div>
+    </div>
   );
 }

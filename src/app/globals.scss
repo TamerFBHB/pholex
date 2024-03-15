@@ -62,7 +62,7 @@ body {
   margin: 0 auto;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .container {
     width: 98%;
     margin: 0 auto;
@@ -95,6 +95,8 @@ a {
   --bg-body : #{$gray-1};
 
   --primary-clr: #{$indigo-8 };
+  --text-btn:#fff;
+
 }
 
 .dark {
@@ -107,6 +109,9 @@ a {
   --bg-body : #{$gray-9 };
 
   --primary-clr: #{$indigo-3} ;
+  --text-btn:#000;
+
+  
 }
 
 html,

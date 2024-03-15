@@ -2,16 +2,29 @@
 
 
 .navbar {
+    position: relative;
     @include size(100% , 80px);
     @include flex (space-between , center);
     border-top: 10px solid var(--primary-clr) ;
     top: 0;
     background-color: var(--bg-nav);
-    color: var(--text);
     box-shadow: 1px 1px 20px  $gray-4;
     padding: 0 10px;
     font-size: 17px;
     z-index: 100;
+
+    @include mq(992px){
+        position: fixed;
+        @include size(92% , 80px);
+        transition: 0.5s;
+    }
+    @include mq(768px){
+        @include size(95% , 80px);
+    }
+    @include mq(420px){
+        @include size(98% , 80px);
+    }
+
 }
 
 .logo{
@@ -25,7 +38,11 @@
 .links{
     @include flex (center , center);
     gap: 5px;
-    color: var(--text);
+    
+    @include mq(992px){
+        display: none;
+    }
+
 }
 .link{
     position: relative;
@@ -65,11 +82,21 @@
     transition: 0.5s;
 }
 
+.call{
+    color: var(--text);
 
+    @include mq(992px){
+        display: none;
+    }
+}
 
 .iconsLinks{
     @include flex(center , center);
     gap: 5px;
+
+    @include mq(992px){
+        margin-right: 60px;
+    }
 }
 .socialMedia{
     @include flex (center , center);
@@ -77,4 +104,48 @@
     gap: 10px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+//in screen mobile
+.linksMobile{
+    display: none;
+
+    @include mq(992px){
+        position: fixed;
+        top: 80px;
+        @include flex-col (center , center);
+        @include size(92% , fit-content);
+        @include blur-bg($indigo-3);
+        padding: 10px 0;
+        gap: 5px;
+        transition: 1s;
+    }
+    @include mq(768px){
+        @include size(95% , fit-content);
+    }
+    @include mq(420px){
+        @include size(98% , fit-content);
+    }
+}
+@media (max-width: 992px){
+    .open{
+        transform: translateY(0%);
+        opacity: 1;
+        z-index: 100;
+    }
+    .close{
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -1;
+    }
+    
+    .fixed{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    .hide{    
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    
 }

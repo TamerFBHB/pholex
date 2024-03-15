@@ -5,27 +5,53 @@
   @include flex(center,center);
   color: var(--text);
   overflow: hidden;
+
+  @include mq(992px){
+    flex-direction: column;
+  }
+  @include mq(420px){
+    margin-top: 90px ;
+  }
 }
 .avatarContainer{
   @include size(50% , calc(100vh - 80px));
   @include flex(center,center);
-
+  
+  @include mq(992px){
+    @include size(100% , 50%);
+  }
   .avatar{
     @include size(500px , 550px);  
     position: relative;
     opacity: 0;
     @include animation(FadeIn);
+
+    @include mq(420px){
+      @include size(300px , 350px); 
+    }
+  }
+  
+}
+.avatarContainer .imageCardContainer{  
+  @include flex(end,end);
+  @include size(100% , 100%);
+}
+.avatarContainer .imageCardContainer .imgCards{
+  position: relative;
+  @include size(220px , 250px);
+
+  @include mq(420px){
+    @include size(120px , 150px);
+
   }
 }
-.avatarContainer .card{
+.avatarContainer .imgCard{
   position: absolute;
-  right:-15px;
-  bottom: -15px;
   z-index: 20;box-shadow: 3px 3px 10px $gray-5; 
   border-radius: 15px;
   opacity: 0;
   @include animation-time(FromRight,0.5s, 0.3s );
-  transition: 1s
+  transition: 1s;
 }
 .avatarContainer .lines{
   position: absolute;
@@ -33,6 +59,10 @@
   top: 0px;
   z-index: 10;
   @include animation(FadeIn);
+
+  @include mq(420px){
+    display: none;
+  }
 }
 .info{
   @include size(50% ,calc(100vh - 80px));
@@ -44,18 +74,45 @@
   opacity: 0;
   @include animation(FromBottom);
 
+  @include mq(992px){
+    @include size(100% , 50vh);
+    @include flex-col(center,center);
+    padding: 0  ;
+  }
+
   h6{
     font-size: 20px;
     color: var(--primary-clr);
+
+    @include mq(420px){
+      font-size: 18px;
+    }
   }
   h1{
     font-size: 70px;
-    line-height: 60px;
+    line-height: 70px;
     color: var(--text);
+
+    @include mq(992px){
+      text-align: center;
+      line-height: 50px;
+      font-size: 50px;
+    }
+    @include mq(420px){
+      font-size: 30px;
+      line-height: 30px;
+    }
   }
   p{
     font-size: 16px;
     color: var(--text);
+
+    @include mq(992px){
+      text-align: center;
+    }
+    @include mq(420px){
+      font-size: 14px;
+    }
   }
 
   .btn{
@@ -63,13 +120,12 @@
     @include size(150px , 50px);
     @include flex(center,center);
     border-radius: 30px;
-    color: var(--text);
+    color: var(--text-btn);
     background: linear-gradient(to right, $indigo-8 , color-mix(in lab,$indigo-8 , #fff ));
     box-shadow: 3px 3px 10px $gray-5;    
     opacity: 0;
     @include animation-time(FromBottom,1s, 0.3s );
     transition: 0.5s;
-    
   }
   .btn::after{
     content: "";
@@ -93,3 +149,67 @@
     
   }
 }
+
+
+//********* cards********
+.cards{
+  @include flex(start,center);
+  @include size(100% , fit-content);
+  margin: 50px 0;
+  padding: 20px 0;
+  gap: 30px;
+
+  @include mq(992px){
+    flex-wrap: wrap;
+  }
+
+  @include mq(420px){
+    @include flex(center,center);
+  }
+}
+.card{
+  @include size(200px , 300px);
+  border-radius: 15px;
+  background-color: var(--text-btn);
+  box-shadow: 0px 0px 5px $gray-5;
+  opacity: 0;  
+}
+
+.card:nth-child(1){
+  @include animation-time(FromRight,0.5s, 0.3s );
+  background: linear-gradient(to top, $indigo-8 , color-mix(in lab,$indigo-8 , #fff ));
+  animation-timeline: view();
+  animation-range: 150px 500px;  
+
+  @include mq(420px){
+    animation-range: 150px 400px;  
+  }
+}
+.card:nth-child(2){
+  @include animation-time(FromRight,0.5s, 0.6s );
+  animation-timeline: view();
+  animation-range: 150px 500px;  
+
+  @include mq(420px){
+    animation-range: 150px 400px;  
+  }
+}
+.card:nth-child(3){
+  @include animation-time(FromRight,0.5s, 0.9s );
+  animation-timeline: view();
+  animation-range: 150px 500px;  
+
+  @include mq(420px){
+    animation-range: 150px 400px;  
+  }
+}
+.card:nth-child(4){
+  @include animation-time(FromRight,0.5s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 500px;  
+
+  @include mq(420px){
+    animation-range: 150px 400px;  
+  }
+}
+
