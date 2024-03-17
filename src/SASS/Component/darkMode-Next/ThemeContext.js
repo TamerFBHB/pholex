@@ -5,10 +5,9 @@ export const ThemeContext = createContext()
 
 export default function ThemeProvider({ children }) {
 
-    const [mode, setMode] = useState("dark")
+    const [mode, setMode] = useState("light")
     const toggle = () => {
-        setMode(prev => (prev == "dark" ? "light" : "dark"));
-        document.documentElement.classList.toggle("dark");
+        setMode(prev => (prev == "dark" ? "light" : "dark"))
     }
     return (
         <ThemeContext.Provider value={{ toggle, mode }}>

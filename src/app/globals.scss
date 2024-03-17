@@ -97,6 +97,8 @@ a {
   --primary-clr: #{$indigo-8 };
   --text-btn:#fff;
 
+  --textCard : #fff;
+
 }
 
 .dark {
@@ -110,8 +112,8 @@ a {
 
   --primary-clr: #{$indigo-3} ;
   --text-btn:#000;
-
   
+  --textCard : #000;
 }
 
 html,

@@ -211,12 +211,12 @@
 }
 
 //19- text graidient
-@mixin text-gradient($direction, $font, $clr1, $clr2) {
+@mixin text-gradient($direction, $clr1, $clr2) {
   background: linear-gradient(to $direction, $clr1 30%, $clr2 60%);
   background-clip: text; 
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  font-size: $font;
+  color: transparent;
 }
 
 //20-  make React icon bold

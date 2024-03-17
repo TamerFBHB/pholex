@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
+import { BiSearchAlt } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -28,8 +29,15 @@ export default function Home() {
       </main >
 
       <div className={styles.cards}>
-        <div className={`${styles.card} ${styles.why}`}></div>
-        <div className={`${styles.card} ${styles.seo}`}></div>
+        <div className={`${styles.card} ${styles.why}`}>
+          <h4>our services</h4>
+          <h1>we're here to make your website</h1>
+        </div>
+        <div className={`${styles.card} ${styles.seo}`}>
+          <BiSearchAlt className={styles.iconSearch}/>
+          <h3>optimize & SEO</h3>
+          <p>for far away.behind the word ,ountains.far from the countries vokalia and consonantia</p>
+        </div>
         <div className={`${styles.card} ${styles.deigning}`}></div>
         <div className={`${styles.card} ${styles.developement}`}></div>
       </div>

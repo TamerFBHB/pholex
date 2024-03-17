@@ -48,11 +48,11 @@
     height: 40px;
   }
   .active::after{
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     background-color: red;
   }
   .active::before{
     inset: 18.5px -10px;
-    transform: rotate(135deg);
+    transform: rotate(45deg);
     background-color: red;
   }

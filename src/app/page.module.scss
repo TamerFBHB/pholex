@@ -82,7 +82,7 @@
 
   h6{
     font-size: 20px;
-    color: var(--primary-clr);
+    color: var(--text);
 
     @include mq(420px){
       font-size: 18px;
@@ -91,7 +91,7 @@
   h1{
     font-size: 70px;
     line-height: 70px;
-    color: var(--text);
+    @include text-gradient(right, $indigo-8 ,  color-mix(in lab,$indigo-8 , #fff )) ;
 
     @include mq(992px){
       text-align: center;
@@ -168,30 +168,63 @@
   }
 }
 .card{
-  @include size(200px , 300px);
+  @include size(250px , 300px);
+  @include flex-col(center,start);
   border-radius: 15px;
-  background-color: var(--text-btn);
-  box-shadow: 0px 0px 5px $gray-5;
+  background-color: var(--bg-body);
+  box-shadow: 10px 10px 20px $gray-4 ;
+  gap: 15px;
+  padding: 20px;
   opacity: 0;  
+  color: var(--text);
 }
-
+.mains{
+  height: 5000px;
+}
 .card:nth-child(1){
   @include animation-time(FromRight,0.5s, 0.3s );
   background: linear-gradient(to top, $indigo-8 , color-mix(in lab,$indigo-8 , #fff ));
   animation-timeline: view();
-  animation-range: 150px 500px;  
+  animation-range: 150px 400px;  
+  color: var(--textCard);
+  text-transform: capitalize;
 
   @include mq(420px){
     animation-range: 150px 400px;  
+  }
+
+  h1{
+    font-size: 30px;
+    @include mq(420px){
+      font-size: 20px;
+    }
+  }
+  h4{
+    letter-spacing: 3px;
+    font-size: 16px;
   }
 }
 .card:nth-child(2){
   @include animation-time(FromRight,0.5s, 0.6s );
   animation-timeline: view();
-  animation-range: 150px 500px;  
+  animation-range: 150px 450px;   
+  text-transform: capitalize;
 
   @include mq(420px){
     animation-range: 150px 400px;  
+  }
+
+  p{
+    font-size: 14px;
+    color: $gray-5;
+  }
+  .iconSearch{
+    position: relative;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 35px;
+    color: #fff;
   }
 }
 .card:nth-child(3){
@@ -206,10 +239,10 @@
 .card:nth-child(4){
   @include animation-time(FromRight,0.5s, 1.2s );
   animation-timeline: view();
-  animation-range: 150px 500px;  
+  animation-range: 150px 550px;   
 
   @include mq(420px){
-    animation-range: 150px 400px;  
+    animation-range: 150px 440px;  
   }
 }
 
