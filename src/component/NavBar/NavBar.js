@@ -8,7 +8,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io";
 import { BsTwitterX } from "react-icons/bs";
 import MenuToClose from '../MenuToClose/MenuToClose';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function NavBar() {
     //to build links
@@ -26,17 +26,19 @@ export default function NavBar() {
     const [state, setstate] = useState(false)
 
     // to apeare navbar when scroll
-    const [visib, setVisib] = useState("fixed");
+    const [visible, setVisible] = useState("fixed");
+useEffect(()=>{
     window.addEventListener("scroll", function () {
-        if (window.scrollY < 50) { setVisib("fixed"); }
-        else if (window.scrollY > 350) { setVisib("fixed"); }
-        else if (window.scrollY > 50) { setVisib("hide"); setstate(false)}
-        else { setVisib("hide"); }    
+        if (window.scrollY < 50) { setVisible("fixed"); }
+        else if (window.scrollY > 350) { setVisible("fixed"); }
+        else if (window.scrollY > 50) { setVisible("hide"); setstate(false)}
+        else { setVisible("hide"); }    
     });
+},[])
 
     return (
-        <div>
-            <div className={`navbar ${visib==="fixed" ? 'fixed' : 'hide'}`}>
+        <div >
+            <div className={`navbar ${visible ==="fixed" ? 'fixed' : 'hide'}`}>
                 <div className="logo">
                     <Image src="/logo.png" alt="logo" fill />
                 </div>

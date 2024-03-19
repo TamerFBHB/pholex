@@ -1,10 +1,14 @@
 @use '../SASS/Main' as* ;
 
-
+.mains{
+  height: 5000px
+}
 .main{
-  @include flex(center,center);
+  @include flex(start,center);
   color: var(--text);
   overflow: hidden;
+  margin-top: 80px ;
+  height: 100vh;
 
   @include mq(992px){
     flex-direction: column;
@@ -14,7 +18,7 @@
   }
 }
 .avatarContainer{
-  @include size(50% , calc(100vh - 80px));
+  @include size(50% , 100vh);
   @include flex(center,center);
   
   @include mq(992px){
@@ -65,7 +69,7 @@
   }
 }
 .info{
-  @include size(50% ,calc(100vh - 80px));
+  @include size(50% ,100vh);
   @include flex-col(center,start);
   gap: 20px;
   padding: 0 55px 0 0 ;
@@ -155,7 +159,7 @@
 .cards{
   @include flex(start,center);
   @include size(100% , fit-content);
-  margin: 50px 0;
+  margin: 50px 0 0 0 ;
   padding: 20px 0;
   gap: 30px;
 
@@ -166,6 +170,11 @@
   @include mq(420px){
     @include flex(center,center);
   }
+}
+.svgg{
+  position: absolute;
+  left: 0;
+  @include size(100% , 100%);
 }
 .card{
   @include size(250px , 300px);
@@ -178,19 +187,16 @@
   opacity: 0;  
   color: var(--text);
 }
-.mains{
-  height: 5000px;
-}
-.card:nth-child(1){
+.card:nth-child(2){
   @include animation-time(FromRight,0.5s, 0.3s );
   background: linear-gradient(to top, $indigo-8 , color-mix(in lab,$indigo-8 , #fff ));
   animation-timeline: view();
-  animation-range: 150px 400px;  
+  animation-range: 150px 300px;  
   color: var(--textCard);
   text-transform: capitalize;
 
   @include mq(420px){
-    animation-range: 150px 400px;  
+    animation-range: 150px 300px;  
   }
 
   h1{
@@ -204,14 +210,14 @@
     font-size: 16px;
   }
 }
-.card:nth-child(2){
+.card:nth-child(3){
   @include animation-time(FromRight,0.5s, 0.6s );
   animation-timeline: view();
-  animation-range: 150px 450px;   
+  animation-range: 150px 350px;   
   text-transform: capitalize;
 
   @include mq(420px){
-    animation-range: 150px 400px;  
+    animation-range: 150px 300px;  
   }
 
   p{
@@ -225,24 +231,74 @@
     padding: 5px;
     font-size: 35px;
     color: #fff;
+    box-shadow: 2px 15px 10px 2px $gray-4;
   }
 }
-.card:nth-child(3){
+.card:nth-child(4){
   @include animation-time(FromRight,0.5s, 0.9s );
   animation-timeline: view();
-  animation-range: 150px 500px;  
+  animation-range: 150px 400px;    
+  text-transform: capitalize; 
 
   @include mq(420px){
     animation-range: 150px 400px;  
   }
+
+  p{
+    font-size: 14px;
+    color: $gray-5;
+  
+  }
+  .iconSearch{
+    position: relative;
+    background-color: #dc0303;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 35px;
+    color: #fff;
+    box-shadow: 2px 15px 10px 2px $gray-4;
+  }
 }
-.card:nth-child(4){
+.card:nth-child(5){
   @include animation-time(FromRight,0.5s, 1.2s );
   animation-timeline: view();
-  animation-range: 150px 550px;   
+  animation-range: 150px 450px;     
+  text-transform: capitalize; 
 
   @include mq(420px){
-    animation-range: 150px 440px;  
+    animation-range: 150px 350px;  
+  }
+
+  p{
+    font-size: 14px;
+    color: $gray-5;
+  
+  }
+  
+  .iconSearch{
+    position: relative;
+    background-color: $indigo-5;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 35px;
+    color: #fff;
+    box-shadow: 2px 15px 10px 2px $gray-4;
   }
 }
 
+//******aboutUS ******
+.aboutUs{
+  position: absolute;
+  background-color: rgba($indigo-5 , 0.1);
+  left: 0;
+  @include size(100%,100vh);
+}
+.about{
+  @include flex(start,center);
+  @include size(100% , 100%);
+  gap: 60px;
+}
+.avatarContainer{
+  position: relative;
+  @include size(400px , 500px);
+}
