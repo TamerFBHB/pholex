@@ -1,5 +1,6 @@
 @use '../SASS/Main' as* ;
 
+
 .mains{
   height: 5000px
 }
@@ -7,7 +8,7 @@
   @include flex(start,center);
   color: var(--text);
   overflow: hidden;
-  margin-top: 80px ;
+  padding-top: 80px ;
   height: 100vh;
 
   @include mq(992px){
@@ -156,9 +157,16 @@
 
 
 //********* cards********
+.sectioncards{
+  position: absolute;
+  left: 0;
+  @include size(100%,100vh);
+}
 .cards{
-  @include flex(start,center);
+  position: relative;  
+  @include flex(center,center);
   @include size(100% , fit-content);
+  background-color: rgba($indigo-5 , 0.1);
   margin: 50px 0 0 0 ;
   padding: 20px 0;
   gap: 30px;
@@ -171,11 +179,30 @@
     @include flex(center,center);
   }
 }
-.svgg{
+
+
+.customshape {
   position: absolute;
+  top: 0;
   left: 0;
-  @include size(100% , 100%);
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
+
+.customshape svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 166px;
+}
+
+.customshape .shapeFill {
+  fill: #F4F9F3;
+  // fill: green;
+}
+
+
 .card{
   @include size(250px , 300px);
   @include flex-col(center,start);
@@ -223,6 +250,7 @@
   p{
     font-size: 14px;
     color: $gray-5;
+    text-wrap: pretty;
   }
   .iconSearch{
     position: relative;
@@ -301,4 +329,7 @@
 .avatarContainer{
   position: relative;
   @include size(400px , 500px);
+}
+.about .info{
+  margin-left: 130px;
 }

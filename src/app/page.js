@@ -30,12 +30,14 @@ export default function Home() {
         </div>
       </main >
 
-      <div className={styles.cards}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className={styles.svgg}>
-          <path fill="#6366f1" fill-opacity="0.1"
-            d="M0,64L48,74.7C96,85,192,107,288,106.7C384,107,480,85,576,74.7C672,64,768,64,864,80C960,96,1056,128,1152,128C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-          </path>
-        </svg>
+<div className={styles.sectioncards}>
+<div className={styles.cards}>
+        <div class={styles.customshape}>
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapeFill}></path>
+          </svg>
+        </div>
+
         <div className={`${styles.card} ${styles.why}`}>
           <h4>our services</h4>
           <h1>we're here to make your website</h1>
@@ -57,6 +59,7 @@ export default function Home() {
         </div>
       </div>
 
+
       <div className={styles.aboutUs}>
         <div className="container">
           <div className={styles.about}>
@@ -72,6 +75,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
+
     </div>
   );
 }
