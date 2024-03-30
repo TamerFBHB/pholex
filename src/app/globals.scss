@@ -98,7 +98,7 @@ a {
   --text-btn:#fff;
 
   --textCard : #fff;
-
+  --svg : #F4F9F3;
 }
 
 .dark {
@@ -114,6 +114,7 @@ a {
   --text-btn:#000;
   
   --textCard : #000;
+  --svg : #{$gray-9};
 }
 
 html,

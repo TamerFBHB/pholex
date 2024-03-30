@@ -198,8 +198,7 @@
 }
 
 .customshape .shapeFill {
-  fill: #F4F9F3;
-  // fill: green;
+  fill: var(--svg);
 }
 
 
@@ -328,8 +327,36 @@
 }
 .avatarContainer{
   position: relative;
-  @include size(400px , 500px);
+  opacity: 0;
+  @include size(400px , 500px);  
+  @include animation-time(zoomIn,1s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 450px; 
 }
 .about .info{
-  margin-left: 130px;
+  margin-left: 130px;  
+}
+.about .info h3{
+  opacity: 0;
+  @include animation-time(FromRight,1s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 350px;  
+}
+.about .info h1{
+  opacity: 0;
+  @include animation-time(FadeIn,1s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 350px;  
+}
+.about .info p{
+  opacity: 0;
+  @include animation-time(FadeIn,1s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 250px;  
+}
+.about .info .btn{
+  opacity: 0;
+  @include animation-time(zoomIn,1s, 1.2s );
+  animation-timeline: view();
+  animation-range: 150px 250px;  
 }
